@@ -2,8 +2,7 @@ class LittleMissedPigLatiny{
 	String pigLatinConverter(String statement){
 		String[] words = statement.split(" ");
 		for(int v = 0; v < words.length(); v ++){
-			for(int x = 0; x < words[v].length; x++){
-				switch(words[v].charAt(x)){
+				switch(words[v].charAt(0)){
 					case "a":
 						words[v]+="way";
 						break;
@@ -36,12 +35,11 @@ class LittleMissedPigLatiny{
 						break;
 					default:
 						StringBuilder newWord = new StringBuilder(words[v]);
-						newWord = newWord.append(words[v].charAt(x).toLower()).append("ay");
+						newWord = newWord.append(words[v].charAt(0).toLower()).append("ay");
 						newWord.deleteCharAt(0);
 						words[v] = newWord;
 						break;
 				}
-			}
 		}
 	}
 }
